@@ -69,8 +69,14 @@
         var i = 0;
         $("#tombol-tambah").click(function () {
             ++i;
-            if(i < 3){
-                $("#select_books").after('<div class="form-group"><label for="name" class="labeled-form input-books">Judul Buku</label><select  class="form-control form-control-user insert-books" id="select-books" name="books['+ i +']"><option value="">Pilih</option>@foreach($books as $book)<option value="{{$book->id}}">{{$book->judul}}</option>@endforeach</select></div>');
+            if(i < 2){  
+                $("#select_books").after('<div class="form-group"><label for="name" class="labeled-form input-books">Judul Buku</label><select  class="form-control form-control-user insert-books'+ i +'" id="select-books'+ i +'" name="books'+ i +'"><option value="">Pilih</option>@foreach($books as $book)<option value="{{$book->id}}">{{$book->judul}}</option>@endforeach</select></div>');
+                $(".insert-books1").select2();
+                document.querySelector('[name=books1]').select2();
+            }else if(i==2){
+                $("#select_books").after('<div class="form-group"><label for="name" class="labeled-form input-books">Judul Buku</label><select  class="form-control form-control-user insert-books'+ i +'" id="select-books'+ i +'" name="books'+ i +'"><option value="">Pilih</option>@foreach($books as $book)<option value="{{$book->id}}">{{$book->judul}}</option>@endforeach</select></div>');
+                $("#select-books2").select2();
+                $(".insert-books1").select2();
             }else if(i > 3){
                 error_message('Hanya dapat meminjam maksimal 3 buku');
             }else{

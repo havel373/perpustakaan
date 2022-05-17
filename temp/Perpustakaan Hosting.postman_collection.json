@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "cdf29913-4ecf-4412-85e3-baed25b09511",
+		"name": "Perpustakaan Hosting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "admin@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "havel",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "havel@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "no_hp",
+									"value": "08988282828",
+									"type": "text"
+								},
+								{
+									"key": "alamat",
+									"value": "jalanan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/auth/register",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLnBlcnB1c3Rha2Fhbi5yaWNrYXJ1LmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0OTMzODgyOSwiZXhwIjoxNjQ5MzQyNDI5LCJuYmYiOjE2NDkzMzg4MjksImp0aSI6Im5adE1LajVMdHZBRUx5R0UiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.pMcy9lCUBg_wLuSlma4sIRoXbA0NjsKRzMpc8P3a0CI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/auth/logout",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/books",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLnBlcnB1c3Rha2Fhbi5yaWNrYXJ1LmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY1MDE4MTYyOSwiZXhwIjoxNjUwMTg1MjI5LCJuYmYiOjE2NTAxODE2MjksImp0aSI6Ino4MXZLa1RCdGk4MDlSRFkiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.E5vcY4TIjWpyD_rRVRNYdR_4wHyiYb7qSx-4RtieTrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/books/2",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"books",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show By Categories",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLnBlcnB1c3Rha2Fhbi5yaWNrYXJ1LmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY1MDE4MTYyOSwiZXhwIjoxNjUwMTg1MjI5LCJuYmYiOjE2NTAxODE2MjksImp0aSI6Ino4MXZLa1RCdGk4MDlSRFkiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.E5vcY4TIjWpyD_rRVRNYdR_4wHyiYb7qSx-4RtieTrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/book-category/3",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"book-category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0NjMyOTcwNywiZXhwIjoxNjQ2MzMzMzA3LCJuYmYiOjE2NDYzMjk3MDcsImp0aSI6IktjZTVvN0plN0ROWlg3Q1EiLCJzdWIiOjIxLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.aS3yJQyjjR6DkAiLJ-309EK4dtkHFOkiIF-CEpYvrrg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/booksCategory",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"booksCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLnBlcnB1c3Rha2Fhbi5yaWNrYXJ1LmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY1MDE4MTYyOSwiZXhwIjoxNjUwMTg1MjI5LCJuYmYiOjE2NTAxODE2MjksImp0aSI6Ino4MXZLa1RCdGk4MDlSRFkiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.E5vcY4TIjWpyD_rRVRNYdR_4wHyiYb7qSx-4RtieTrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/booksCategory/2",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"booksCategory",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Borrow & Return",
+			"item": [
+				{
+					"name": "Borrow Book (user)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBpLnBlcnB1c3Rha2Fhbi5yaWNrYXJ1LmNvbVwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY1MDE4MTYyOSwiZXhwIjoxNjUwMTg1MjI5LCJuYmYiOjE2NTAxODE2MjksImp0aSI6Ino4MXZLa1RCdGk4MDlSRFkiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.E5vcY4TIjWpyD_rRVRNYdR_4wHyiYb7qSx-4RtieTrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.perpustakaan.rickaru.com/api/borrow/2",
+							"protocol": "https",
+							"host": [
+								"api",
+								"perpustakaan",
+								"rickaru",
+								"com"
+							],
+							"path": [
+								"api",
+								"borrow",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Book Borrow Confirm (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0OTI4OTcxMiwiZXhwIjoxNjQ5MjkzMzEyLCJuYmYiOjE2NDkyODk3MTIsImp0aSI6IlJnTHphbU11WUF6djQyUmQiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.2kcvD2e4w4Gahf49-LG9soFDWnRHcWS0Bi2IPbXKzJ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/confirm/30",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"confirm",
+								"30"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Return Book (user)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0OTI4OTcxMiwiZXhwIjoxNjQ5MjkzMzEyLCJuYmYiOjE2NDkyODk3MTIsImp0aSI6IlJnTHphbU11WUF6djQyUmQiLCJzdWIiOjIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.2kcvD2e4w4Gahf49-LG9soFDWnRHcWS0Bi2IPbXKzJ0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/return/17",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"return",
+								"17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
